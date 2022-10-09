@@ -1,0 +1,44 @@
+.posterMovie
+{
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+}
+.movieDetailes
+{
+    position: absolute;
+    width:100%;
+    height:100%;
+    top: 100%;
+    left: 0;
+    background-color: rgba(255, 255, 255, 0.788);
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 1s;
+
+}
+.movie-card .posterMovie:hover .movieDetailes
+{
+    top:0;
+}
+.BuPage-style
+{
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  background-color: gray !important;
+  border: 1px red;
+}
+span
+{
+  width: 50px;
+  height: 50px;
+  background-color: aliceblue;
+  color: black;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+}
+
+

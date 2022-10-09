@@ -1,0 +1,30 @@
+<div  class="container mt-4">
+
+  <div class="row">
+    <div class="col-md-4">
+      <div class="img rounded-1">
+        <img [src]="imgPath+tvDetails.poster_path" class="w-100" alt="">
+      </div>
+    </div>
+    <div class="col-md-8">
+     <div>
+       <h1>{{tvDetails.name}}</h1>
+       <h3 class="text-muted">{{tvDetails.tagline}}</h3>
+     <div class="d-flex">
+         <div *ngFor="let s of tvDetails.genres" class="me-3">
+           <p class="boxGenres bg-info p-1 rounded-1">{{s.name}}</p>
+         </div>
+     </div>
+
+     <p> Vote : {{tvDetails.vote_average}}</p>
+     <p> Vote count : {{tvDetails.vote_count}}</p>
+     <p> popularity : {{tvDetails.popularity}}</p>
+     <p *ngFor="let x of tvDetails.seasons; let i = index"> Seasons {{i+1}} release date : {{x.air_date}}</p>
+
+     <p class="text-muted">{{tvDetails.overview}}</p>
+     </div>
+    </div>
+  </div>
+ </div>
+
+

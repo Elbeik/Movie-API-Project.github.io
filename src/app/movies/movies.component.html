@@ -1,0 +1,46 @@
+<div class="container my-3">
+
+
+  <div class="row g-4">
+
+    <div>
+      <ul class=" d-flex justify-content-center">
+
+        <li *ngFor="let item of pageNumber; let it = index" (click)="getPage(it+1)"  class="page-item BuPage-style text-center rounded-1 m-2"><a class="page-link">{{it+1}}</a></li>
+
+      </ul>
+      <h3 class="d-flex justify-content-center">Page show : <span class="text-center rounded-2 ms-4"> {{currentPage}}</span></h3>
+    </div>
+
+
+    <div class="col-md-4">
+      <div>
+        <div class="lines w-25 mb-4"></div>
+        <h1 class="h3">All <br>Movies <br> To Watch Now</h1>
+        <p class="text-muted mt-3">Most watched movies by days</p>
+        <p>{{myDate | date : 'mediumDate'}}</p>
+        <div class="lines mb-4"></div>
+
+        <input [(ngModel)]="searchWord"  class="form-control me-1 my-auto" type="search trending movies" placeholder="Search" aria-label="Search">
+      </div>
+    </div>
+
+
+    <div *ngFor="let item of pagesMovie | search:searchWord" class="col-md-4">
+      <div class="movie-card">
+          <div class="posterMovie">
+              <img [src]="imgPath+item.poster_path" class="imgPoster w-100" alt="">
+              <div class="movieDetailes text-center">
+                  <div>
+                      <h2>{{item.title}}</h2>
+                      <p>{{item.overview}}</p>
+                      <p>Rate: {{item.vote_average}}</p>
+                      <p>{{item.release_date}}</p>
+                  </div>
+              </div>
+          </div>
+
+      </div>
+    </div>
+  </div>
+</div>

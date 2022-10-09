@@ -1,0 +1,31 @@
+
+<div class="container-fluid d-flex justify-content-between align-items-center bg-c">
+  <h2>NOXE</h2>
+  <ul *ngIf="hideShow" class="d-flex">
+    <li class="p-2"><a class="or-co" routerLink="home">Home</a></li>
+    <li class="p-2"><a class="or-co" routerLink="movies">Movies</a></li>
+    <li class="p-2"><a class="or-co" routerLink="popluar">Popular</a></li>
+    <li class="p-2"><a class="or-co" routerLink="tv">TV</a></li>
+  </ul>
+
+  <div class="d-flex">
+
+
+    <ul class="d-flex my-auto changeColor" >
+      <li class="p-2"><a style="cursor: pointer;"  class="fa-brands or-co fa-facebook"></a></li>
+      <li class="p-2"><a style="cursor: pointer;"  class="fa-brands or-co fa-spotify"></a></li>
+      <li class="p-2"><a style="cursor: pointer;"  class="fa-brands or-co fa-instagram"></a></li>
+      <li class="p-2"><a style="cursor: pointer;"  class="fa-brands or-co fa-youtube"></a></li>
+    </ul>
+  </div>
+
+  <div>
+    <ul class="d-flex">
+      <li *ngIf="!hideShow" class="p-2"><a class="or-co" routerLink="login">login</a></li>
+      <li *ngIf="!hideShow" class="p-2"><a class="or-co" routerLink="register">register</a></li>
+      <li *ngIf="hideShow" (click)="logout()" class="p-2"><a class="pointer or-co">log Out</a></li>
+    </ul>
+  </div>
+
+</div>
+

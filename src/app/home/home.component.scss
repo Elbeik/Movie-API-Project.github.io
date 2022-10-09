@@ -1,0 +1,75 @@
+@import '../../styles.scss';
+
+.lines
+{
+  height: 1px;
+  background-color: #a8a8a83d;
+
+}
+img
+{
+  cursor: pointer;
+  transition: all 0.4s;
+
+}
+.movie:hover
+{
+  background-color: #a8a8a83d;
+  z-index: 33333;
+}
+.movie:hover img
+{
+  transform: scale(1.5);
+}
+.movie:hover .bgTranbarent
+{
+  transform: scale(1.5);
+  background-color: rgba(240, 255, 255, 0.5);
+  transition: all 0.4s;
+}
+// .movie:hover .overView
+// {
+//   display: block;
+//   transition: display 2s ease-in-out ;
+// }
+.bgTranbarent
+{
+  width: 100%;
+  height: 100%;
+  top: 0;
+  background-color: rgba(240, 255, 255, 0.0);
+  transition: all 0.4s ;
+  cursor: pointer;
+}
+.bgTranbarent:hover .overView
+{
+  display: block;
+}
+.overView
+{
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: small;
+  font-weight: bold;
+  display: none;
+}
+.rate-box
+{
+  width: 35px;
+  height: 35px;
+  background-color: rgba(128, 128, 128, 0);
+  color: rgba(240, 248, 255, 0);
+  position: absolute;
+  top: 0;
+  right: 0;
+  transition: all 0.5s ease-in-out;
+  font-size: 10px;
+  font-weight: bolder;
+}
+.bgTranbarent:hover .rate-box
+{
+  background-color: rgba(128, 128, 128, 1);
+  color: aliceblue;
+
+}
+

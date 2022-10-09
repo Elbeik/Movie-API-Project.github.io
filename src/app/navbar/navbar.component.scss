@@ -1,0 +1,27 @@
+@import '../../styles.scss';
+
+
+.pointer
+{
+  cursor: help ;
+
+}
+input
+{
+  height: 40px;
+}
+.bg-c
+{
+  background-color:$bgColorSe;
+}
+.or-co:hover
+{
+  color: rgb(247, 106, 12);
+}
+.or-co
+{
+  transition: all 0.5s ease-in-out;
+}
+
+
+

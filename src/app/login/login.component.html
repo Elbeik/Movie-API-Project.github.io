@@ -1,0 +1,29 @@
+<div class="container mt-5">
+  <h1 class="container w-75 m-auto mb-3">Login form</h1>
+
+
+
+  <form [formGroup]="login" (ngSubmit)="logData(login)" class="container w-75 m-auto">
+
+
+    <div *ngIf="logError" class="alert alert-danger"><h3>{{logError}}</h3></div>
+
+
+
+    <label for="email">email</label>
+    <input formControlName="email" class="form-control  mb-3" id="email">
+    <div *ngIf="login.get('email')?.errors?.['email']" class="text-danger alert-danger mb-3">
+      email not valied
+    </div>
+
+    <label for="password">password</label>
+    <input formControlName="password" class="form-control  mb-3" id="password">
+    <div *ngIf="login.get('password')?.errors?.['pattern']" class="text-danger alert-danger mb-3">
+      password not valied
+    </div>
+
+    <button [disabled]="login.invalid" class="btn btn-danger align-items-end">login </button>
+  </form>
+
+</div>
+

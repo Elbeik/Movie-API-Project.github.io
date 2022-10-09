@@ -1,0 +1,29 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@300&display=swap');
+
+$bgColor:#131722;
+$bgColorSe:#0f141d;
+$lightBgColor:#24baef;
+$bgTransparent:rgba(36,186,239,.6) ;
+$fontColor:#fff;
+$borderColor:#a8a8a83d;
+$borderHeight:1px;
+$secondFontColor:#949cb0;
+$coloSp:#92192498;
+
+body
+{
+  background-color: $bgColor;
+  color: $fontColor !important;
+}
+*
+{
+  list-style: none;
+  text-decoration: none;
+}
+a
+{
+  text-decoration: none;
+  color: $fontColor;
+}
+

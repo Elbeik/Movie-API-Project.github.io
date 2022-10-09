@@ -1,0 +1,95 @@
+<div class="container">
+  <!-- Trending Movies -->
+  <div class="row mt-3 mb-4">
+    <div class="col-md-4">
+      <div>
+        <div class="lines w-25 mb-4"></div>
+        <h1 class="h4">Trending <br>Movies <br> To Watch Now</h1>
+        <p class="text-muted mt-3">Most watched movies by days</p>
+        <p>{{myDate | date : 'mediumDate'}}</p>
+        <div class="lines mb-4"></div>
+
+        <input [(ngModel)]="searchWord"  class="form-control me-1 my-auto" type="search trending movies" placeholder="Search" aria-label="Search">
+      </div>
+    </div>
+
+
+    <div *ngFor="let m of movieArrTrending | search:searchWord " class="col-md-2">
+      <div>
+        <div class="movie  position-relative">
+         <div class="imgCover">
+           <img [routerLink]="['/movieDetails', m.id]" [src]="imgPath+m.poster_path" class="w-100" alt="">
+         </div>
+         <div [routerLink]="['/movieDetails', m.id]" class="bgTranbarent position-absolute">
+          <p class="overView position-absolute text-black p-1 mx-auto">{{m.overview |  overview}}</p>
+          <div class="rate-box p-2">{{m.vote_average  }}</div>
+        </div>
+
+
+        </div>
+        <h1 class="h6">{{m.title}}</h1>
+      </div>
+     </div>
+  </div>
+
+  <!-- Trending TV -->
+  <div class="row mt-5">
+    <div class="col-md-4">
+      <div>
+        <div class="lines w-25 mb-4"></div>
+        <h1 class="h4">Trending <br>TV <br> To Watch Now</h1>
+        <p class="text-muted mt-3">Most watched TV by days</p>
+        <div class="lines mb-4"></div>
+
+        <input [(ngModel)]="searchTVWord" class="form-control me-1 my-auto" type="search trending movies" placeholder="Search" aria-label="Search">
+      </div>
+    </div>
+    <div *ngFor="let m of  TVArrTrending | searchTv:searchTVWord" class="col-md-2">
+     <div>
+       <div class="movie  position-relative">
+        <div class="imgCover">
+          <img [routerLink]="['/tvDetails', m.id]" [src]="imgPath+m.poster_path" class="w-100" alt="">
+        </div>
+        <div [routerLink]="['/tvDetails', m.id]" class="bgTranbarent position-absolute">
+         <p class="overView position-absolute text-black p-1 mx-auto">{{m.overview |  overview}}</p>
+         <div class="rate-box p-2">{{m.vote_average}}</div>
+       </div>
+
+       </div>
+       <h1 class="h6">{{m.name}}</h1>
+     </div>
+    </div>
+  </div>
+
+  <!-- upcoming movies -->
+  <div class="row mt-5">
+    <div class="col-md-4">
+      <div>
+        <div class="lines w-25 mb-4"></div>
+        <h1 class="h4">Upcoming <br>Movies <br> To Watch Now</h1>
+        <p class="text-muted mt-3">Most watched TV by days</p>
+        <div class="lines mb-4"></div>
+
+        <input [(ngModel)]="searchTVWord" class="form-control me-1 my-auto" type="search trending movies" placeholder="Search" aria-label="Search">
+      </div>
+    </div>
+    <div *ngFor="let m of upcomingContianer" class="col-md-2">
+     <div>
+       <div class="movie  position-relative">
+        <div class="imgCover">
+          <img [src]="imgPath+m.poster_path" class="w-100" alt="">
+        </div>
+        <div class="bgTranbarent position-absolute">
+         <p class="overView position-absolute text-black p-1 mx-auto">{{m.overview | maxWord}}</p>
+         <div class="rate-box p-2">{{m.vote_average}}</div>
+       </div>
+
+       </div>
+       <h1 class="h6">{{m.title}}</h1>
+     </div>
+    </div>
+  </div>
+
+
+</div>
+

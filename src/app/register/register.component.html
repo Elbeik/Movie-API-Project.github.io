@@ -1,0 +1,57 @@
+
+
+<div class="container mt-5">
+
+  <h1 class="text-center text-info">Register Now</h1>
+
+  <form [formGroup]="register" class="container w-75 m-auto " (ngSubmit)="registerData(register)">
+
+    <div *ngIf="emialExisting" class="alert alert-danger"><h2>{{emialExisting}}</h2></div>
+
+    <label for="first_name">first_name</label>
+    <input formControlName="first_name" class="form-control mb-3" id="first_name">
+    <div *ngIf="register.get('first_name')?.errors && register.get('first_name')?.touched" class="text-danger alert-danger">
+        <p *ngIf="register.get('first_name')?.errors?.['required']"> must add name</p>
+        <p *ngIf="register.get('first_name')?.errors?.['minlength']"> must add more 3 char</p>
+        <p *ngIf="register.get('first_name')?.errors?.['maxlength']"> must add less than 20</p>
+    </div>
+
+    <label for="last_name">last_name</label>
+    <input formControlName="last_name" class="form-control  mb-3" id="last_name">
+    <div *ngIf="register.get('last_name')?.errors && register.get('last_name')?.touched" class="text-danger alert-danger">
+      <p *ngIf="register.get('last_name')?.errors?.['required']"> must add name</p>
+      <p *ngIf="register.get('last_name')?.errors?.['minlength']"> must add more 3 char</p>
+      <p *ngIf="register.get('last_name')?.errors?.['maxlength']"> must add less than 20</p>
+    </div>
+
+    <label for="age">age</label>
+    <input type="number" formControlName="age" class="form-control  mb-3" id="age">
+    <div *ngIf="register.get('age')?.errors && register.get('age')?.touched" class="text-danger alert-danger">
+      <p *ngIf="register.get('age')?.errors?.['required']"> must add your age</p>
+      <p *ngIf="register.get('age')?.errors?.['min']"> must be over 15</p>
+      <p *ngIf="register.get('age')?.errors?.['max']"> must be less than 60</p>
+    </div>
+
+    <label for="email">email</label>
+    <input formControlName="email" class="form-control  mb-3" id="email">
+    <div *ngIf="register.get('email')?.errors && register.get('email')?.touched" class="text-danger alert-danger">
+      <p *ngIf="register.get('email')?.errors?.['required']"> must add your email</p>
+      <p *ngIf="register.get('email')?.errors?.['email']"> entar valied email</p>
+    </div>
+
+    <label for="password">password</label>
+    <input formControlName="password" class="form-control  mb-3" id="password">
+    <div *ngIf="register.get('password')?.errors && register.get('password')?.touched" class="text-danger alert-danger">
+      <p *ngIf="register.get('password')?.errors?.['required']"> must add your password</p>
+      <p *ngIf="register.get('password')?.errors?.['pattern']"> password contain capital and small letters more than 3 , not above 15</p>
+    </div>
+
+
+
+
+    <button [disabled]="register.invalid" class="btn btn-danger align-items-end">Register </button>
+
+  </form>
+
+  </div>
+

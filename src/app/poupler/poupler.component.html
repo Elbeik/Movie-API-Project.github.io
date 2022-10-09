@@ -1,0 +1,38 @@
+<div class="container my-3">
+
+
+  <div class="row g-4">
+
+
+    <div class="col-md-4">
+      <div>
+        <div class="lines w-25 mb-4"></div>
+        <h1 class="h3">All <br>Popular <br> To Watch Now</h1>
+        <p class="text-muted mt-3">Most Trending Popular by week</p>
+        <p>{{myDate | date : 'mediumDate'}}</p>
+        <div class="lines mb-4"></div>
+
+
+      </div>
+    </div>
+
+
+    <div *ngFor="let item of allPopular" class="col-md-4">
+      <div class="movie-card">
+          <div class="posterMovie">
+              <img [src]="imgPath+item.poster_path" class="imgPoster w-100" alt="">
+              <div class="movieDetailes text-center">
+                  <div>
+                      <h2>{{item.title}}</h2>
+                      <p>{{item.overview}}</p>
+                      <p>Rate: {{item.vote_average}}</p>
+                  </div>
+              </div>
+          </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
